@@ -23,6 +23,20 @@ int main() {
         cout << val << " ";
     }
     cout << endl;
+    double total = 0;
+    for (int val : yards) {
+        total += val;
+    }
+    cout << "Total yards: " << total << endl;
+    cout << "Average yards: " << total / SIZE << endl;
+
+    // find longest druve in yards
+    int maxYards = yards[0];
+    for (int i = 1; i < SIZE; i++) {
+        if (yards[i] > maxYards)
+            maxYards = yards[i];
+    }
+    cout << "Longest drive: " << maxYards << " yards" << endl;
     return 0;
 }
 void showDrive() {

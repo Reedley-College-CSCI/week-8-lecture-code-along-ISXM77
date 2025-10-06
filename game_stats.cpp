@@ -18,7 +18,11 @@ int main() {
     showDrive();
     // display memory usage of array
     cout << "Array memeory: ~" << sizeof(yards) << " bytes" << endl;
-    
+    cout << "All yards: ";
+    for (int val : yards) {
+        cout << val << " ";
+    }
+    cout << endl;
     return 0;
 }
 void showDrive() {

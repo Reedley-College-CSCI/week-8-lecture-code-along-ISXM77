@@ -30,13 +30,19 @@ int main() {
     cout << "Total yards: " << total << endl;
     cout << "Average yards: " << total / SIZE << endl;
 
-    // find longest druve in yards
+    // find longest drive in yards
     int maxYards = yards[0];
     for (int i = 1; i < SIZE; i++) {
         if (yards[i] > maxYards)
             maxYards = yards[i];
     }
     cout << "Longest drive: " << maxYards << " yards" << endl;
+
+    int plays[SIZE] = { 11, 18, 10, 12, 5, 4, 6, 7, 5, 6 };
+    for (int i = 0; i < SIZE; i++) {
+        cout << "Drive " << i + 1 << ": " << plays[i] << " plays, "
+            << yards[i] << " yards" << endl;
+    }
     return 0;
 }
 void showDrive() {

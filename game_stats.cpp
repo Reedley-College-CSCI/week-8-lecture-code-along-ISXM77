@@ -3,18 +3,20 @@
 using namespace std;
 void showDrive();
 void showYards(int arr[], int size);
+bool areEqual(int arr1[], int arr2[], int size);
 struct Drive {
     int yards;
     int plays;
 };
 int main() {
     const int SIZE = 10;
-    Drive drives[SIZE] = { {67,11}, {98, 18}, {60, 10}, {94, 12}, {35, 5}, {25, 4}, {45, 6}, {50,7}, {30, 5}, {40, 6} };
+    /*Drive drives[SIZE] = {{67,11}, {98, 18}, {60, 10}, {94, 12}, {35, 5}, {25, 4}, {45, 6}, {50,7}, {30, 5}, {40, 6}};
     cout << "Detroit Lions at Baltimore Ravens" << endl
     << "Sept 29, 2025 Game Statistics" << endl;
-   //  int yards[SIZE] = { 67, 98, 60, 94, 35, 25, 45, 50, 30, 40 };
-    cout << "First drive yards: " << drives[0].yards << endl;
-    cout << "Epic second drive: " << drives[1].yards << " yards" << endl;
+     */
+     int yards[SIZE] = { 67, 98, 60, 94, 35, 25, 45, 50, 30, 40 };
+    // cout << "First drive yards: " << drives[0].yards << endl;
+    cout << "Epic second drive: " << yards[1] << " yards" << endl;
     /*
     for (int i = 0; i < SIZE; i++) {
         cout << "Drive " << i + 1 << ": " << yards[i] << " yards\n";
@@ -43,7 +45,6 @@ int main() {
             maxYards = yards[i];
     }
     cout << "Longest drive: " << maxYards << " yards" << endl;
-    */
     int plays[SIZE] = { 11, 18, 10, 12, 5, 4, 6, 7, 5, 6 };
     for (int i = 0; i < SIZE; i++) {
         cout << "Drive " << i + 1 << ": " << drives[i].plays << " plays, "
@@ -53,6 +54,12 @@ int main() {
     showYards(yards, SIZE);
     cout << endl;
     */
+    cout << "Yards via function: ";
+    showYards(yards, SIZE);
+    cout << endl;
+    int yards2[SIZE] = { 67, 98, 60, 94, 35, 25, 45, 50, 30, 40 };
+    cout << "Do yards for each array match?\n"
+    << (areEqual(yards, yards2, SIZE) ? "Yes" : "No") << endl;
     return 0;
 }
 void showDrive() {
@@ -66,4 +73,10 @@ void showYards(int arr[], int size) {
     for (int i = 0; i < size; i++) cout << arr[i] << " ";
     cout << endl;
 
+}
+bool areEqual(int arr1[], int arr2[], int size) {
+    for (int i = 0; i < size; i++) {
+        if (arr1[i] != arr2[i]) return false;
+    }
+    return true;
 }
